@@ -9,86 +9,109 @@ Supports **CommonJS (`require`)**, **ES Modules (`import`)**, and **TypeScript**
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ```bash
 npm install emoji-detector-node
+```
 
+## Usage
+  ### CommonJS (require)
+  #### Example 1
+    ```bash
+    const { detect } = require("emoji-detector-node");
 
-📖 Usage
-🔹 CommonJS (require)
+    console.log(detect("Hello 😊🚀"));
+    ```
+  #### Output:
+    ```bash
+    {
+      "originalText": "Hello 😊🚀",
+      "textOnly": "Hello",
+      "emojis": "😊🚀",
+      "isEmoji": true
+    }
+    ```
+  #### Example 2
+  ```bash
+  const { detect } = require("emoji-detector-node");
 
-const { detect } = require("emoji-detector-node");
+  console.log(detect("No emoji here"));
+  ```
+  #### Output:
+  ```bash
+  {
+    "originalText": "No emoji here",
+    "textOnly": "No emoji here",
+    "emojis": "",
+    "isEmoji": false
+  }
+  ```
 
-console.log(detect("Hello 😊🚀"));
-console.log(detect("No emoji here"));
+  ### ES Modules (import)
+  #### Example 1
+    ```bash
+    import { detect } from "emoji-detector-node";
 
-👉 Output:
+    console.log(detect("Flags 🇮🇳 mixed with text"));
+    ```
+  #### Output:
+    ```bash
+    {
+      "originalText": "Flags 🇮🇳 mixed with text",
+      "textOnly": "Flags mixed with text",
+      "emojis": "🇮🇳",
+      "isEmoji": true
+    }
+    ```
+  #### Example 2
+    ```bash
+    import { detect } from "emoji-detector-node";
+    console.log(detect("Only emojis 😍🔥💯"));
+    ```
+  #### Output:
+    ```bash
+    {
+      "originalText": "Only emojis 😍🔥💯",
+      "textOnly": "",
+      "emojis": "😍🔥💯",
+      "isEmoji": true
+    }
+    ```
 
-{
-  "originalText": "Hello 😊🚀",
-  "textOnly": "Hello",
-  "emojis": "😊🚀",
-  "isEmoji": true
-}
-{
-  "originalText": "No emoji here",
-  "textOnly": "No emoji here",
-  "emojis": "",
-  "isEmoji": false
-}
+  ### TypeScript Support
+  #### Example 1
+    ```bash
+      Type definitions are included automatically.
 
-🔹 ES Modules (import)
-// userinput.mjs
-import { detect } from "emoji-detector-node";
+      import { detect } from "emoji-detector-node";
 
-console.log(detect("Flags 🇮🇳 mixed with text"));
-console.log(detect("Only emojis 😍🔥💯"));
+      const result = detect("Hello World 😎");
 
+      console.log(result.originalText); // "Hello World 😎"
+      console.log(result.textOnly);     // "Hello World"
+      console.log(result.emojis);       // "😎"
+      console.log(result.isEmoji);      // true
+    ```
 
-👉 Output:
+## Returned Object
+  ```bash
+  The `detect()` function always returns an object:
 
-{
-  "originalText": "Flags 🇮🇳 mixed with text",
-  "textOnly": "Flags mixed with text",
-  "emojis": "🇮🇳",
-  "isEmoji": true
-}
-{
-  "originalText": "Only emojis 😍🔥💯",
-  "textOnly": "",
-  "emojis": "😍🔥💯",
-  "isEmoji": true
-}
+  | Field        | Type    | Description                                  |
+  |--------------|---------|----------------------------------------------|
+  | originalText | string  | The original input text                      |
+  | textOnly     | string  | Text with emojis removed                     |
+  | emojis       | string  | Extracted emojis (concatenated)              |
+  | isEmoji      | boolean | true if at least one emoji was found, otherwise false |
+  ```
 
-🔹 TypeScript Support
+## Example Use Cases
+- Filter emojis out of user input  
+- Detect if a message contains only text or emojis  
+- Extract emojis for analytics (e.g., most used emojis)  
 
-Type definitions are included automatically.
-
-import { detect } from "emoji-detector-node";
-
-const result = detect("Hello World 😎");
-
-console.log(result.originalText); // "Hello World 😎"
-console.log(result.textOnly);     // "Hello World"
-console.log(result.emojis);       // "😎"
-console.log(result.isEmoji);      // true
-
-📂 Returned Object
-
-The detect() function always returns an object:
-
-Field	Type	Description
-originalText	string	The original input text
-textOnly	string	Text with emojis removed
-emojis	string	Extracted emojis (concatenated)
-isEmoji	boolean	true if at least one emoji was found, otherwise false
-
-📝 Example Use Cases
-Filter emojis out of user input.
-Detect if a message contains only text or emojis.
-Extract emojis for analytics (e.g., most used emojis).
-
-📄 License
-
-MIT © 2025 [Tukaram Todkari]
+## License
+  ```bash
+    MIT © 2025 [Tukaram Todkari]
+  ```
