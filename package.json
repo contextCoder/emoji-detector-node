@@ -1,6 +1,6 @@
 {
   "name": "emoji-detector-node",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A simple emoji detection and extraction library for modern JavaScript environments (Node.js, Deno, Browser)",
   "main": "index.cjs",
   "module": "index.mjs",

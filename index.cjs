@@ -15,7 +15,7 @@ function detect(input) {
     originalText: input,
     textOnly,
     emojis: emojis.join(""),
-    isEmoji: emojis.length === 0,
+    isEmoji: emojis.length > 0,
   };
 }
 
