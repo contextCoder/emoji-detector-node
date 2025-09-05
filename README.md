@@ -18,11 +18,11 @@ npm install emoji-detector-node
 ## Usage
   ### CommonJS (require)
   #### Example 1
-    ```bash
-    const { detect } = require("emoji-detector-node");
+  ```bash
+  const { detect } = require("emoji-detector-node");
 
-    console.log(detect("Hello 😊🚀"));
-    ```
+  console.log(detect("Hello 😊🚀"));
+  ```
   #### Output:
     ```bash
     {
@@ -50,49 +50,49 @@ npm install emoji-detector-node
 
   ### ES Modules (import)
   #### Example 1
-    ```bash
-    import { detect } from "emoji-detector-node";
+  ```bash
+  import { detect } from "emoji-detector-node";
 
-    console.log(detect("Flags 🇮🇳 mixed with text"));
-    ```
+  console.log(detect("Flags 🇮🇳 mixed with text"));
+  ```
   #### Output:
-    ```bash
-    {
-      "originalText": "Flags 🇮🇳 mixed with text",
-      "textOnly": "Flags mixed with text",
-      "emojis": "🇮🇳",
-      "isEmoji": true
-    }
-    ```
+  ```bash
+  {
+    "originalText": "Flags 🇮🇳 mixed with text",
+    "textOnly": "Flags mixed with text",
+    "emojis": "🇮🇳",
+    "isEmoji": true
+  }
+  ```
   #### Example 2
-    ```bash
-    import { detect } from "emoji-detector-node";
-    console.log(detect("Only emojis 😍🔥💯"));
-    ```
+  ```bash
+  import { detect } from "emoji-detector-node";
+  console.log(detect("Only emojis 😍🔥💯"));
+  ```
   #### Output:
-    ```bash
-    {
-      "originalText": "Only emojis 😍🔥💯",
-      "textOnly": "",
-      "emojis": "😍🔥💯",
-      "isEmoji": true
-    }
-    ```
+  ```bash
+  {
+    "originalText": "Only emojis 😍🔥💯",
+    "textOnly": "",
+    "emojis": "😍🔥💯",
+    "isEmoji": true
+  }
+  ```
 
   ### TypeScript Support
   #### Example 1
-    ```bash
-      Type definitions are included automatically.
+  ```bash
+    Type definitions are included automatically.
 
-      import { detect } from "emoji-detector-node";
+    import { detect } from "emoji-detector-node";
 
-      const result = detect("Hello World 😎");
+    const result = detect("Hello World 😎");
 
-      console.log(result.originalText); // "Hello World 😎"
-      console.log(result.textOnly);     // "Hello World"
-      console.log(result.emojis);       // "😎"
-      console.log(result.isEmoji);      // true
-    ```
+    console.log(result.originalText); // "Hello World 😎"
+    console.log(result.textOnly);     // "Hello World"
+    console.log(result.emojis);       // "😎"
+    console.log(result.isEmoji);      // true
+  ```
 
 ## Returned Object
   ```bash
