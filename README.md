@@ -24,14 +24,14 @@ npm install emoji-detector-node
   console.log(detect("Hello 😊🚀"));
   ```
   #### Output:
-    ```bash
-    {
-      "originalText": "Hello 😊🚀",
-      "textOnly": "Hello",
-      "emojis": "😊🚀",
-      "isEmoji": true
-    }
-    ```
+  ```bash
+  {
+    "originalText": "Hello 😊🚀",
+    "textOnly": "Hello",
+    "emojis": "😊🚀",
+    "isEmoji": true
+  }
+  ```
   #### Example 2
   ```bash
   const { detect } = require("emoji-detector-node");
@@ -100,10 +100,10 @@ npm install emoji-detector-node
 
   | Field        | Type    | Description                                  |
   |--------------|---------|----------------------------------------------|
-  | originalText | string  | The original input text                      |
-  | textOnly     | string  | Text with emojis removed                     |
-  | emojis       | string  | Extracted emojis (concatenated)              |
-  | isEmoji      | boolean | true if at least one emoji was found, otherwise false |
+  | originalText | string  | The (original input text)                      |
+  | textOnly     | string  | Text (without emojis)                    |
+  | emojis       | string  | Extracted (extracted emojies)              |
+  | isEmoji      | boolean | true (if at least one emoji was found, otherwise false) |
   ```
 
 ## Example Use Cases
